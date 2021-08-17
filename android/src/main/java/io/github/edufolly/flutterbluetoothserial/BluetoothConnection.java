@@ -41,10 +41,10 @@ public abstract class BluetoothConnection
             throw new IOException("already connected");
         }
 
-//         BluetoothDevice device = bluetoothAdapter.getRemoteDevice(address);
-//         if (device == null) {
-//             throw new IOException("device not found");
-//         }
+        BluetoothDevice device = bluetoothAdapter.getRemoteDevice(address);
+        if (device == null) {
+            throw new IOException("device not found");
+        }
 
         BluetoothSocket socket = device.createInsecureRfcommSocketToServiceRecord(uuid); // @TODO . introduce ConnectionMethod
         if (socket == null) {
